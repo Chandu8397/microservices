@@ -1,0 +1,12 @@
+package com.coforge.training.shopstop.model;
+
+/*
+* Author:Mekapothula.Reddy
+* Date:29 Nov 2024
+* Time:12:59:25 pm
+* Project:product-service
+*/
+
+public class Product {
+
+}

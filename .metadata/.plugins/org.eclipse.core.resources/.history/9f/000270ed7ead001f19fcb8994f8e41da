@@ -1,0 +1,12 @@
+package com.coforge.training.shopstop.controller;
+
+/*
+* Author:Mekapothula.Reddy
+* Date:28 Nov 2024
+* Time:5:16:52 pm
+* Project:cart-service
+*/
+
+public class CartController {
+
+}

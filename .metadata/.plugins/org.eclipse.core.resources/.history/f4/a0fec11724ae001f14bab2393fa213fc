@@ -1,0 +1,12 @@
+package com.coforge.training.shopstop.repository;
+
+/*
+* Author:Mekapothula.Reddy
+* Date:29 Nov 2024
+* Time:1:02:04 pm
+* Project:product-service
+*/
+
+public interface ProductRepository {
+
+}

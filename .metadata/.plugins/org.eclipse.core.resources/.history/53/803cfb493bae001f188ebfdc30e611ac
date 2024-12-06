@@ -1,0 +1,49 @@
+package com.coforge.training.shopstop.controller;
+
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
+
+import com.coforge.training.shopstop.model.Product;
+import com.coforge.training.shopstop.service.OrderService;
+import com.coforge.training.shopstop.service.ProductClient;
+
+import io.github.resilience4j.circuitbreaker.annotation.CircuitBreaker;
+
+/*
+* Author:Mekapothula.Reddy
+* Date:29 Nov 2024
+* Time:3:31:46 pm
+* Project:order-service
+*/
+
+@RestController
+@RequestMapping("/api")
+public class OrderController {
+	
+	@Autowired
+	private  OrderService orderService;
+	
+	//Inject instance of Feign Client
+	@Autowired
+	private ProductClient productClient;
+		
+	@GetMapping("/orders/products")
+	@CircuitBreaker(name = "productService", fallbackMethod = "getAllProductsFallback")
+	public ResponseEntity<List<Product>> getAll() {
+		ResponseEntity<List<Product>> products = productClient.getAllProducts();
+		
+		if(products.getStatusCode() == HttpStatus.OK) {
+			List<Product> p = products.getBody();
+			return ResponseEntity.status(products.getStatusCode()).body(null);
+		}
+		
+	}
+	}
+
+

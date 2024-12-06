@@ -1,0 +1,12 @@
+package com.coforge.training.shopstop.controller;
+
+/*
+* Author:Mekapothula.Reddy
+* Date:29 Nov 2024
+* Time:3:31:46 pm
+* Project:order-service
+*/
+
+public class OrderController {
+
+}

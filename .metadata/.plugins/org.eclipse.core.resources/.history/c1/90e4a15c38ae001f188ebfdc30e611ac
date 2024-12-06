@@ -1,0 +1,14 @@
+package com.coforge.training.shopstop.service;
+
+
+/*
+* Author:Mekapothula.Reddy
+* Date:29 Nov 2024
+* Time:3:21:47 pm
+* Project:order-service
+*/
+
+
+public interface ProductClient  {
+
+}
